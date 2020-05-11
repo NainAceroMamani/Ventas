@@ -17,10 +17,9 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name', 50)->nullable();
             $table->string('sur_name', 50)->nullable();
-            $table->string('dni' ,10)->unique()->nullable();
+            $table->string('ndocumento', 13)->nullable();
             $table->string('address')->nullable();
             $table->string('imagen', 80)->nullable();
-            $table->string('ruc', 20)->unique()->nullable();
             $table->string('email')->unique();
             $table->string('password')->nullable();
             $table->string('role')->default('Cliente'); // Admin, Cliente
@@ -28,10 +27,14 @@ class CreateUsersTable extends Migration
             $table->integer('maxpuestos')->default(1);
             $table->string('longitud', 20)->nullable();
             $table->string('useragent', 30)->nullable();
+            $table->tinyInteger('completado')->default(0);
+
             $table->timestamp('email_verified_at')->nullable();
 
             $table->unsignedInteger('distrito_id')->nullable();
             $table->foreign('distrito_id')->references('id')->on('distritos');
+            $table->unsignedInteger('identidad_id')->nullable();
+            $table->foreign('identidad_id')->references('id')->on('identidads');
             $table->rememberToken();
             $table->timestamps();
         });

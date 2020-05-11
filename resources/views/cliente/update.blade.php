@@ -59,13 +59,22 @@
                                 <input type="text" class="form-control" name="sur_name" value="{{ old('sur_name', auth()->user()->sur_name) }}">
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="dni">Dni de Usuario</label>
-                                <input type="text" class="form-control" name="dni" value="{{ old('dni', auth()->user()->dni) }}" required>
+                                <label class="form-label" for="dni">Tipo de Documento</label>
+                                <div class="mb-3">
+								<select class="form-control select2" id="identidad_id" name="identidad_id" data-toggle="select2">
+                                    <optgroup label="Documentos Disponibles">
+                                    @foreach($tipoDocuments as $document)
+                                        <option value="{{ $document->id }}" 
+                                            @if(auth()->user()->identidad_id == $document->id ) selected @endif >{{ $document->name }}</option>
+                                    @endforeach
+                                    </optgroup>
+                                </select>
+                                </div>
                                 <small class="form-text text-muted">{{ __('Campo Requerido.') }}</small>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="ruc">Ruc de Usuario</label>
-                                <input type="text" class="form-control" name="ruc" value="{{ old('ruc', auth()->user()->ruc) }}" required>
+                                <label class="form-label" for="ndocumento">Número de Documento</label>
+                                <input type="text" class="form-control" name="ndocumento" value="{{ old('ndocumento', auth()->user()->ndocumento) }}" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="email">Email de Usuario</label>
@@ -104,12 +113,8 @@
                                     <td>{{ auth()->user()->sur_name }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Dni</th>
-                                    <td>{{ auth()->user()->dni }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Ruc</th>
-                                    <td>{{ auth()->user()->ruc }}</td>
+                                    <th>Número de Documento</th>
+                                    <td>{{ auth()->user()->ndocumento }}</td>
                                 </tr>
                                 <tr>
                                     <th>Email</th>

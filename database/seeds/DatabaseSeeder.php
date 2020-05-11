@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'nain.acero24@gmail.com',
             'password' => bcrypt('secret'),
             'address' => '',
-            'dni' => '74575523',
             'role' => 'Cliente'
         ]);
 
@@ -26,7 +25,6 @@ class DatabaseSeeder extends Seeder
             'name' => 'Nain Acero Mamani',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('secret'),
-            'dni' => '74575554',
             'address' => '',
             'role' => 'Admin'
         ]);
