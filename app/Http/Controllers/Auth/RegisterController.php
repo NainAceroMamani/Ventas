@@ -74,9 +74,6 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
-        $user->maxpuestos = $user->maxpuestos - 1;
-        $user->save();
         UsuarioPuesto::create([
             'usuario_id' => $user->id,
             'puesto_id'  => $puesto->id

@@ -19,7 +19,7 @@ class UserController extends Controller
             'dni'       =>  'required|max:9',
             'ruc'       =>  'max:15',
             'address'   =>  'max:150',
-            'email'     =>  'required|max:150'
+            'email'     =>  'required|max:150',
         ];
         $this->validate($request, $rules);
         $usuario->name = $request->input('name');

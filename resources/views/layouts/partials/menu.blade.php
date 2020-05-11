@@ -32,20 +32,34 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-					<a class="sidebar-link" href="{{ url('puesto') }}">
-                        <i class="align-middle mr-2 fas fa-fw fa-store"></i> <span class="align-middle">{{ __('Mis Puestos') }}</span>
-                        <span class="sidebar-badge badge badge-pill badge-primary">{{ auth()->user()->maxpuestos }}</span>
+                    <a href="#puestos" data-toggle="collapse" class="sidebar-link collapsed">
+                        <i class="align-middle mr-2 fas fa-fw fa-home"></i> <span class="align-middle">{{ __('Mis Puestos') }}</span>
+                    </a>
+                    <ul id="puestos" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                        <li class="sidebar-item"><a class="sidebar-link" href="{{ url('puesto') }}"">{{ __('Lista de Puestos') }}</a></li>
+                        <li class="sidebar-item"><a class="sidebar-link" href="{{ url('puesto/create') }}"">{{ __('Crear de Puesto') }}</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+					<a class="sidebar-link" href="{{ url('producto/create') }}">
+                        <i class="align-middle mr-2 fas fa-fw fa-list"></i> <span class="align-middle">{{ __('Lista de Productos') }}</span>
+                        <span class="sidebar-badge badge badge-pill badge-primary">{{ __('Ir') }}</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#productos" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle mr-2 fas fa-fw fa-home"></i> <span class="align-middle">Productos</span>
+					<a class="sidebar-link" href="{{ url('price') }}">
+                        <i class="align-middle mr-2 fas fa-fw fa-dollar-sign"></i> <span class="align-middle">{{ __('Sussripciones') }}</span>
+                        <span class="sidebar-badge badge badge-pill badge-primary">{{ __('Ir') }}</span>
                     </a>
-                    <ul id="productos" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{ url('producto') }}">{{ __('Lista de Productos') }}</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="#">{{ __('Crear de Producto') }}</a></li>
-                    </ul>
                 </li>
+                <li class="sidebar-item">
+					<a class="sidebar-link" href="javascript:void" onclick="$('#logout-form').submit();">
+                        <i class="align-middle mr-2 fab fa-fw fa-expeditedssl"></i> <span class="align-middle">{{ __('Cerrar sesión') }}</span>
+                    </a>
+                </li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </ul>
         </div>
     </nav>
