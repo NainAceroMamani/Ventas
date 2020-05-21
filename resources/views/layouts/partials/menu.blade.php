@@ -13,6 +13,10 @@
                 <small>{{ __('Feria Tacna') }}</small>
             </div>
 
-            @if(auth()->user()->role == '')
+            @if(auth()->user()->role == 'Cliente')
+                @include('layouts.partials.cliente.menu_cliente')
+            @elseif(auth()->user()->role == 'Admin')
+                @include('layouts.partials.admin.menu_admin')
+            @endif
         </div>
     </nav>

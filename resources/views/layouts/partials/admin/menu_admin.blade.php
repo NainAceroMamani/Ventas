@@ -11,31 +11,49 @@
         </ul>
     </li>
     <li class="sidebar-item">
-        <a class="sidebar-link" href="{{ url('user') }}">
-            <i class="align-middle mr-2 fas fa-fw fa-user-check"></i> <span class="align-middle">{{ __('Mis Datos') }}</span>
-            <span class="sidebar-badge badge badge-pill badge-primary">{{ __('Perfil') }}</span>
+        <a href="#categoria" data-toggle="collapse" class="sidebar-link collapsed">
+            <i class="align-middle mr-2 fas fa-fw fa-home"></i> <span class="align-middle">{{ __('Categorias') }}</span>
         </a>
-    </li>
-    <li class="sidebar-item">
-        <a href="#puestos" data-toggle="collapse" class="sidebar-link collapsed">
-            <i class="align-middle mr-2 fas fa-fw fa-home"></i> <span class="align-middle">{{ __('Mis Puestos') }}</span>
-        </a>
-        <ul id="puestos" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-            <li class="sidebar-item"><a class="sidebar-link" href="{{ url('puesto') }}"">{{ __('Lista de Puestos') }}</a></li>
-            <li class="sidebar-item"><a class="sidebar-link" href="{{ url('puesto/create') }}"">{{ __('Crear de Puesto') }}</a></li>
+        <ul id="categoria" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ url('categoria') }}"">{{ __('Lista de Categorias') }}</a></li>
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ url('categoria/create') }}"">{{ __('Crear Categorias') }}</a></li>
         </ul>
     </li>
     <li class="sidebar-item">
-        <a class="sidebar-link" href="{{ url('producto/create') }}">
-            <i class="align-middle mr-2 fas fa-fw fa-list"></i> <span class="align-middle">{{ __('Lista de Productos') }}</span>
-            <span class="sidebar-badge badge badge-pill badge-primary">{{ __('Ir') }}</span>
+        <a href="#subcategoria" data-toggle="collapse" class="sidebar-link collapsed">
+            <i class="align-middle mr-2 fas fa-fw fa-home"></i> <span class="align-middle">{{ __('SubCategoria') }}</span>
         </a>
+        <ul id="subcategoria" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ url('subcategoria') }}"">{{ __('Lista de SubCategoria') }}</a></li>
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ url('subcategoria/create') }}"">{{ __('Crear SubCategoria') }}</a></li>
+        </ul>
     </li>
     <li class="sidebar-item">
-        <a class="sidebar-link" href="{{ url('price') }}">
-            <i class="align-middle mr-2 fas fa-fw fa-dollar-sign"></i> <span class="align-middle">{{ __('Sussripciones') }}</span>
-            <span class="sidebar-badge badge badge-pill badge-primary">{{ __('Ir') }}</span>
+        <a href="#paises" data-toggle="collapse" class="sidebar-link collapsed">
+            <i class="align-middle mr-2 fas fa-fw fa-home"></i> <span class="align-middle">{{ __('Paises') }}</span>
         </a>
+        <ul id="paises" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ url('pais') }}"">{{ __('Lista de Paises') }}</a></li>
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ url('pais/create') }}"">{{ __('Crear Pais') }}</a></li>
+        </ul>
+    </li>
+    <li class="sidebar-item">
+        <a href="#regiones" data-toggle="collapse" class="sidebar-link collapsed">
+            <i class="align-middle mr-2 fas fa-fw fa-home"></i> <span class="align-middle">{{ __('Regiones') }}</span>
+        </a>
+        <ul id="regiones" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ url('region') }}"">{{ __('Lista de Regiones') }}</a></li>
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ url('region/create') }}"">{{ __('Crear Region') }}</a></li>
+        </ul>
+    </li>
+    <li class="sidebar-item">
+        <a href="#provincias" data-toggle="collapse" class="sidebar-link collapsed">
+            <i class="align-middle mr-2 fas fa-fw fa-home"></i> <span class="align-middle">{{ __('Provincias') }}</span>
+        </a>
+        <ul id="provincias" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ url('provincia') }}"">{{ __('Lista de Provincias') }}</a></li>
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ url('provincia/create') }}"">{{ __('Crear Provincia') }}</a></li>
+        </ul>
     </li>
     <li class="sidebar-item">
         <a class="sidebar-link" href="javascript:void" onclick="$('#logout-form').submit();">

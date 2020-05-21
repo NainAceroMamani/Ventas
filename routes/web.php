@@ -46,6 +46,43 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/producto/{usuarioPuesto}/grupo', 'Cliente\ProductoController@create_grupo');
     Route::post('/producto/grupo', 'Cliente\ProductoController@grupo');
 
+    // Categorias
+    Route::get('/categoria', 'Administrador\CategoriaController@index');
+    Route::get('/categoria/create', 'Administrador\CategoriaController@create');
+    Route::post('/categoria/store', 'Administrador\CategoriaController@store');
+    Route::get('/categoria/{categoria}/edit', 'Administrador\CategoriaController@edit');
+    Route::put('/categoria/{categoria}/update', 'Administrador\CategoriaController@update');
+
+    // Subcategorias
+    Route::get('/subcategoria', 'Administrador\SubCategoriaController@index');
+    Route::get('/subcategoria/create', 'Administrador\SubCategoriaController@create');
+    Route::post('/subcategoria/store', 'Administrador\SubCategoriaController@store');
+    Route::get('/subcategoria/{subcategoria}/edit', 'Administrador\SubCategoriaController@edit');
+    Route::put('/subcategoria/{subcategoria}/update', 'Administrador\SubCategoriaController@update');
+
+    // Paises
+    Route::get('/pais', 'Administrador\PaisController@index');
+    Route::get('/pais/create', 'Administrador\PaisController@create');
+    Route::post('/pais/store', 'Administrador\PaisController@store');
+    Route::get('/pais/{pais}/edit', 'Administrador\PaisController@edit');
+    Route::put('/pais/{pais}/update', 'Administrador\PaisController@update');
+
+    // Regiones
+    Route::get('/region', 'Administrador\RegionController@index');
+    Route::get('/region/create', 'Administrador\RegionController@create');
+    Route::post('/region/store', 'Administrador\RegionController@store');
+    Route::get('/region/{region}/edit', 'Administrador\RegionController@edit');
+    Route::put('/region/{region}/update', 'Administrador\RegionController@update');    
+    // Api REST de Regiones
+    Route::get('/region/{pais}/regiones', 'Administrador\RegionController@apiregiones');
+
+    // Provincias 
+    Route::get('/provincia', 'Administrador\ProvinciaController@index');
+    Route::get('/provincia/create', 'Administrador\ProvinciaController@create');
+    Route::post('/provincia/store', 'Administrador\ProvinciaController@store');
+    Route::get('/provincia/{provincia}/edit', 'Administrador\ProvinciaController@edit');
+    Route::put('/provincia/{provincia}/update', 'Administrador\ProvinciaController@update');
+
     // Suscripciones
     Route::get('/price', 'Cliente\PrecioController@index');
 });

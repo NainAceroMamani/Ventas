@@ -151,7 +151,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="description">Descripción del Producto</label>
-                                <textarea name="description" data-provide="markdown" rows="14">{{ old('description') }}</textarea>
+                                <textarea name="description" rows="14" >{{ old('description') }}</textarea>
                             </div> 
                             <input type="hidden" name="puesto_id" value={{ $usuarioPuesto->id }}>
                             <button type="submit" class="btn btn-primary">Guardar</button>
@@ -168,7 +168,8 @@
 
 @section('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-
+    <script src="https://cdn.tiny.cloud/1/z3fq59r5g34njc4c1xr6o53d6go75rgc5p8wojlzgqkc3n8j/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
     <script>
         $(function() {
             $subcategoria = $('#subcategoria');
